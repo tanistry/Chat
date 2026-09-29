@@ -1,0 +1,31 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+
+  "name": "ugps-chat",
+
+  "main": "src/worker.js",
+
+  "compatibility_date": "2026-09-29",
+
+  "assets": {
+    "directory": "./public"
+  },
+
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "CHAT_ROOM",
+        "class_name": "ChatRoom"
+      }
+    ]
+  },
+
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": [
+        "ChatRoom"
+      ]
+    }
+  ]
+}
